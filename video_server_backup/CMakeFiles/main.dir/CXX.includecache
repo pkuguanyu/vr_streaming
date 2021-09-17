@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xglab/video_server_backup/main.cpp
+libavcodec/avcodec.h
+/home/xglab/video_server_backup/libavcodec/avcodec.h
+libavformat/avformat.h
+/home/xglab/video_server_backup/libavformat/avformat.h
+libswscale/swscale.h
+/home/xglab/video_server_backup/libswscale/swscale.h
+libswresample/swresample.h
+/home/xglab/video_server_backup/libswresample/swresample.h
+libavutil/imgutils.h
+/home/xglab/video_server_backup/libavutil/imgutils.h
+libavutil/pixfmt.h
+/home/xglab/video_server_backup/libavutil/pixfmt.h
+thread
+-
+stdio.h
+-
+stdlib.h
+-
+string
+-
+iostream
+-
+
