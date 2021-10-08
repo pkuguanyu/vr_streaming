@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/xglab/player/main.cpp
+/home/xglab/vr_streaming/player/main.cpp
 stdio.h
 -
 peer_management.hpp
-/home/xglab/player/peer_management.hpp
+/home/xglab/vr_streaming/player/peer_management.hpp
 libavcodec/avcodec.h
-/home/xglab/player/libavcodec/avcodec.h
+/home/xglab/vr_streaming/player/libavcodec/avcodec.h
 libavformat/avformat.h
-/home/xglab/player/libavformat/avformat.h
+/home/xglab/vr_streaming/player/libavformat/avformat.h
 libswscale/swscale.h
-/home/xglab/player/libswscale/swscale.h
+/home/xglab/vr_streaming/player/libswscale/swscale.h
 SDL/SDL.h
-/home/xglab/player/SDL/SDL.h
+/home/xglab/vr_streaming/player/SDL/SDL.h
 libavcodec/avcodec.h
 -
 libavformat/avformat.h
@@ -30,15 +30,15 @@ SDL/SDL.h
 unistd.h
 -
 
-/home/xglab/player/peer_management.cpp
+/home/xglab/vr_streaming/player/peer_management.cpp
 peer_management.hpp
-/home/xglab/player/peer_management.hpp
+/home/xglab/vr_streaming/player/peer_management.hpp
 
-/home/xglab/player/peer_management.hpp
+/home/xglab/vr_streaming/player/peer_management.hpp
 udp.h
-/home/xglab/player/udp.h
+/home/xglab/vr_streaming/player/udp.h
 
-/home/xglab/player/udp.h
+/home/xglab/vr_streaming/player/udp.h
 stdlib.h
 -
 stdio.h

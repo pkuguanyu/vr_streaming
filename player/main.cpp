@@ -30,7 +30,7 @@ extern "C"
 //Refresh
 #define SFM_REFRESH_EVENT  (SDL_USEREVENT + 1)
 
-#define players 2 //the number of players
+#define players 1 //the number of players
 #define gap_limit 30 //if bar for synchronization
  
 int thread_exit=0;
@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
 	int player_id = argv[1][0] - '0';
 
 	peer_management group;
-	group.init(player_id, players);
+	if (players > 1) group.init(player_id, players);
 	printf("player id: %d\n", player_id);
 
 	AVFormatContext	*pFormatCtx;
@@ -72,7 +72,8 @@ int main(int argc, char* argv[])
 	SDL_Event event;
  
 	char filepath[]="rtmp://127.0.0.1/videotest/test0_out";
-	filepath[31] += argv[1][0] - '0';
+	int len = strlen(filepath);
+	filepath[len - 5] += argv[1][0] - '0';
 	puts(filepath);
 	av_register_all();
 	avformat_network_init();
@@ -164,15 +165,17 @@ int main(int argc, char* argv[])
 						return -1;
 					}
 					if(got_picture){
-						//check whether the current player is behind others		
-						group.update_peers();
-						group.update_current_frame(packet->pts);
-						group.broadcast();
-						max_gap = group.gap();
-						//If behind, discard this frame without display, in order to get the next frame immediately. 
-						if (max_gap > gap_limit) {
-							av_free_packet(packet);
-							continue;
+						if (players > 1) {
+							//check whether the current player is behind others		
+							group.update_peers();
+							group.update_current_frame(packet->pts);
+							group.broadcast();
+							max_gap = group.gap();
+							//If behind, discard this frame without display, in order to get the next frame immediately. 
+							if (max_gap > gap_limit) {
+								av_free_packet(packet);
+								continue;
+							}
 						}
 						SDL_LockYUVOverlay(bmp);
 						pFrameYUV->data[0]=bmp->pixels[0];

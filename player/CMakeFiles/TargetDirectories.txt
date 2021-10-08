@@ -1,3 +1,3 @@
-/home/xglab/player/CMakeFiles/rebuild_cache.dir
-/home/xglab/player/CMakeFiles/edit_cache.dir
-/home/xglab/player/CMakeFiles/main.dir
+/home/xglab/vr_streaming/player/CMakeFiles/rebuild_cache.dir
+/home/xglab/vr_streaming/player/CMakeFiles/edit_cache.dir
+/home/xglab/vr_streaming/player/CMakeFiles/main.dir
