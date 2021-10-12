@@ -30,6 +30,9 @@ extern "C"
 //Refresh
 #define SFM_REFRESH_EVENT  (SDL_USEREVENT + 1)
 
+//Full Screen
+#define SHOW_FULLSCREEN 1
+
 #define players 6 //the number of players
 #define gap_limit 50 //if bar for synchronization
  
@@ -65,7 +68,8 @@ int main(int argc, char* argv[])
 	//SDL
 	int ret, got_picture;
 	int screen_w=0,screen_h=0;
-	SDL_Surface *screen; 
+	SDL_Surface *screen;
+       	const SDL_VideoInfo *vi;	
 	SDL_Overlay *bmp; 
 	SDL_Rect rect;
 	SDL_Thread *video_tid;
@@ -118,10 +122,17 @@ int main(int argc, char* argv[])
 		return -1;
 	} 
  
-	
+
+#if SHOW_FULLSCREEN
+	vi = SDL_GetVideoInfo();
+	screen_w = vi->current_w;
+	screen_h = vi->current_h;
+	screen = SDL_SetVideoMode(screen_w, screen_h, 0,SDL_FULLSCREEN);
+#else
 	screen_w = pCodecCtx->width;
 	screen_h = pCodecCtx->height;
 	screen = SDL_SetVideoMode(screen_w, screen_h, 0,0);
+#endif
  
 	if(!screen) {  
 		printf("SDL: could not set video mode - exiting:%s\n",SDL_GetError());  
