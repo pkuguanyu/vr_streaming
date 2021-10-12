@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/peer_management.cpp.o CMakeFiles/main.dir/udp.c.o  -o main  -L/usr/local/gcc-10.2.0/lib/gcc/x86_64-linux-gnu/10.2.0  -L/usr/local/gcc-10.2.0/lib64  -L/usr/local/gcc-10.2.0/lib -lavcodec -lavformat -lswscale -lswresample -lavutil -lpthread -lSDL 

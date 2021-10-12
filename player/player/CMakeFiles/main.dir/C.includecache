@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xglab/player/udp.c
+udp.h
+/home/xglab/player/udp.h
+
+/home/xglab/player/udp.h
+stdlib.h
+-
+stdio.h
+-
+memory.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+unistd.h
+-
+string.h
+-
+stdbool.h
+-
+stdarg.h
+-
+

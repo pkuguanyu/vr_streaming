@@ -1,0 +1,3 @@
+/home/xglab/video_server/CMakeFiles/rebuild_cache.dir
+/home/xglab/video_server/CMakeFiles/edit_cache.dir
+/home/xglab/video_server/CMakeFiles/main.dir

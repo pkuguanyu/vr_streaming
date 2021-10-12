@@ -1,0 +1,3 @@
+/home/xglab/player/CMakeFiles/rebuild_cache.dir
+/home/xglab/player/CMakeFiles/edit_cache.dir
+/home/xglab/player/CMakeFiles/main.dir
