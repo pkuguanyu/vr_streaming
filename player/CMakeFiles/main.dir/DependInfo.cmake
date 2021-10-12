@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/xglab/vr_streaming/player/udp.c" "/home/xglab/vr_streaming/player/CMakeFiles/main.dir/udp.c.o"
+  "/home/xglab/player/udp.c" "/home/xglab/player/CMakeFiles/main.dir/udp.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -14,8 +14,8 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/usr/local/include"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/xglab/vr_streaming/player/main.cpp" "/home/xglab/vr_streaming/player/CMakeFiles/main.dir/main.cpp.o"
-  "/home/xglab/vr_streaming/player/peer_management.cpp" "/home/xglab/vr_streaming/player/CMakeFiles/main.dir/peer_management.cpp.o"
+  "/home/xglab/player/main.cpp" "/home/xglab/player/CMakeFiles/main.dir/main.cpp.o"
+  "/home/xglab/player/peer_management.cpp" "/home/xglab/player/CMakeFiles/main.dir/peer_management.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

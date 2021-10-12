@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/xglab/vr_streaming/player/udp.c
+/home/xglab/player/udp.c
 udp.h
-/home/xglab/vr_streaming/player/udp.h
+/home/xglab/player/udp.h
 
-/home/xglab/vr_streaming/player/udp.h
+/home/xglab/player/udp.h
 stdlib.h
 -
 stdio.h
