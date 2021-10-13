@@ -22,7 +22,8 @@ extern "C"
 #pragma comment(lib, "swscale.lib")
 #pragma comment(lib, "swresample.lib")
 
-
+#define SAVE_FILE 0
+#define frames_to_save 900
 #define upside_down 1
 #define framecut_ratio 0.765
 
@@ -141,6 +142,12 @@ int work(int thread_id, int thread_sum)
 	string output_stream = "rtmp://127.0.0.1/videotest/test";
 	output_stream += char('0' + thread_id);
 	output_stream += "_out";
+	
+#if SAVE_FILE
+	output_stream = "record0.flv";
+	output_stream[6] += thread_id;
+#endif
+	
 	input_filepath = input_stream.c_str();
 	output_filepath = output_stream.c_str();
 
@@ -267,7 +274,10 @@ int work(int thread_id, int thread_sum)
 	int video_count = 0;
 
 	while (1)
-	{	
+	{
+#if SAVE_FILE
+		if (video_count >= frames_to_save) break;
+#endif	
 		if (av_read_frame(ifmt_ctx, &ipkt) < 0)  
 		break;
 
