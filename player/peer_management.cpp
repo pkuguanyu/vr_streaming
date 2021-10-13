@@ -5,12 +5,12 @@ void peer_management::init(int _player_id, int _players)
 {
 	players = _players;
 	
-	if (0 != _player_id) udp_client_init(&(clientskt[0]), "127.0.0.1", 8010 + 0);
-	if (1 != _player_id) udp_client_init(&(clientskt[1]), "127.0.0.1", 8010 + 1);
-	if (2 != _player_id) udp_client_init(&(clientskt[2]), "127.0.0.1", 8010 + 2);
-	if (3 != _player_id) udp_client_init(&(clientskt[3]), "127.0.0.1", 8010 + 3);
-	if (4 != _player_id) udp_client_init(&(clientskt[4]), "127.0.0.1", 8010 + 4);
-	if (5 != _player_id) udp_client_init(&(clientskt[5]), "127.0.0.1", 8010 + 5);
+	if (0 != _player_id) udp_client_init(&(clientskt[0]), "192.168.88.104", 8010 + 0);
+	if (1 != _player_id) udp_client_init(&(clientskt[1]), "192.168.88.104", 8010 + 1);
+	if (2 != _player_id) udp_client_init(&(clientskt[2]), "192.168.88.105", 8010 + 2);
+	if (3 != _player_id) udp_client_init(&(clientskt[3]), "192.168.88.105", 8010 + 3);
+	if (4 != _player_id) udp_client_init(&(clientskt[4]), "192.168.88.106", 8010 + 4);
+	if (5 != _player_id) udp_client_init(&(clientskt[5]), "192.168.88.106", 8010 + 5);
 
 	for (int i = 0; i < players; ++i)
 		current_frame[i] = 0;

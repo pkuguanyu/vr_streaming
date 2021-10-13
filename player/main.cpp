@@ -127,7 +127,9 @@ int main(int argc, char* argv[])
 	vi = SDL_GetVideoInfo();
 	screen_w = vi->current_w;
 	screen_h = vi->current_h;
-	screen = SDL_SetVideoMode(screen_w, screen_h, 0,SDL_FULLSCREEN);
+	//screen_w = pCodecCtx->width * 2;
+        //screen_h = pCodecCtx->height * 2;
+	screen = SDL_SetVideoMode(screen_w, screen_h, 0,SDL_RESIZABLE);
 #else
 	screen_w = pCodecCtx->width;
 	screen_h = pCodecCtx->height;
@@ -139,7 +141,7 @@ int main(int argc, char* argv[])
 		return -1;
 	}
 	
-	bmp = SDL_CreateYUVOverlay(pCodecCtx->width, pCodecCtx->height,SDL_YV12_OVERLAY, screen); 
+	bmp = SDL_CreateYUVOverlay(screen_w, screen_h, SDL_YV12_OVERLAY, screen); 
 	
 	rect.x = 0;    
 	rect.y = 0;    
@@ -154,6 +156,10 @@ int main(int argc, char* argv[])
 	
 	
 	img_convert_ctx = sws_getContext(pCodecCtx->width, pCodecCtx->height, pCodecCtx->pix_fmt, pCodecCtx->width, pCodecCtx->height, AV_PIX_FMT_YUV420P, SWS_BICUBIC, NULL, NULL, NULL); 
+#if SHOW_FULLSCREEN
+	img_convert_ctx = sws_getContext(pCodecCtx->width, pCodecCtx->height, pCodecCtx->pix_fmt, screen_w, screen_h, AV_PIX_FMT_YUV420P, SWS_BICUBIC, NULL, NULL, NULL);
+#endif
+	
 	//--------------
 	video_tid = SDL_CreateThread(sfp_refresh_thread,NULL);
 	//
