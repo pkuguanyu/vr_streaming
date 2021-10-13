@@ -75,7 +75,7 @@ int main(int argc, char* argv[])
 	SDL_Thread *video_tid;
 	SDL_Event event;
  
-	char filepath[]="rtmp://127.0.0.1/videotest/test0_out";
+	char filepath[]="rtmp://192.168.88.110/videotest/test0_out";
 	int len = strlen(filepath);
 	filepath[len - 5] += argv[1][0] - '0';
 	puts(filepath);
